@@ -1,0 +1,85 @@
+/* Estilização */
+	// Flex: 1 faz com que os componentes se adaptem com o maior espaço possível na tela sem tomar espaço do outro (referencia == tagPai);
+	// Flex: 2 faz com que o componente tome o dobro do tamanho se comparado ao componente do mesmo escopo com flex;
+	// TextInput == input:text(HTML);
+	/*FlexBox*/
+		// flexDirection: Serve para indicar o alinhamento do conteudo de uma view - aplicada na tag pai (view) - semelhante ao display:flex - parâmetros: 'row' e 'column';	
+		// justifyContent: Serve para alinhar os componentes na horizontal - aplicada na tag pai (view) - semelhante ao justify-content - parâmetros: (os mesmos do css);
+		// alignItems: Serve para alinhar os componentes na vertical - aplicada na tag pai (view) - semelhante ao align-items - parâmetros: (os mesmos do css);
+		- OBS se dependendo do flexDirection as funções do justifyContent e alignItems são invertidas;
+	/*Estilização Borda*/
+		// borderWidth: "Tamanho da borda do input";
+		// borderColor: "Cor da borda do input";
+
+/*TextInput*/
+	/*Tratamento de dados*/
+		/*DOM*/
+			// onChangeText = onChange(ReactJS) - apenas para TextInput
+/*Alert*/
+	// alert('<string>') - Mesmo jeito que o JS;
+/*Image*/
+	// Source (Imagens Locais) - Sintaxe: <Image Source={require('<Caminho da Imagem>')}/>
+/*TouchableOpacity*/
+	// Funciona como um botão só que com mais facilidade para estilização e criação de cards;
+	// Sintaxe:
+		<TouchableOpacity>
+			<View>
+				<Text>
+					<Título do Botão>
+				</Text>
+			</View>
+		</TouchableOpacity>
+/*ScroolView*/
+	// Cria um scroll
+	// Sintaxe:
+		<ScrollView>
+			<Componentes que serão afetados pelo Scrool>
+		</ScrollView>
+	//Props:
+		- showVerticalScrollIndicator(booleano) - indicador de rolagem do app;
+		- scrollEnable(booleano) - habilita ou desabilita rolagem;
+		- horizontal(boobleano) - rolagem horizontal - PS: não precisa de flexDirection:row é automático.
+		- showHorizontalScrollIndicator(booleano) - indicador de rolagem horizontal do app;
+/*FlatList*/
+	// Cria uma lista Scroolável em que mostra ao usuário apenas o necessário poupando memória do celular;
+	
+	//Sintaxe:
+		<FlatList data={<estado>} renderItem={<componente>}/>
+	//Props:
+		- data (Array de Objetos) - Recebe as informações do estado;
+		- renderItem (Função que retorna Componente) - Printa a partir das informações os componentes;
+		- keyExtractor (Callback com as infos do data) - O retorno da função indica a key dos componentes;
+/*Picker*/
+	// Picker é uma biblioteca externa do React-Native que serve para criar seletores;
+	// Picker semelhante ao <Select><options></options></Select> no HTML;
+	// Sintaxe:
+		<Picker <PropsPai> >
+			<Picker.Item <PropsFilho> />
+		</Picker>
+	// PropsPai:
+		- selectedValue (estado) - muda um estado para o value do item selecionado;
+		- onValueChange (callback com parâmetros value do item e index do item selecionado) - executa uma função ao mudar o item selecionado;
+	// PropsFilho:
+		- key - id do item na lista;
+		- value - Valor que o Pai pegará ao filho ser selecionado;
+		- label - Texto para o usuário;
+/*Slider*/
+	// Seletor em barra hozizontal - parecido com o seletor de volume do celular;
+	// Sintaxe:
+		<Slide <Props> />
+	// Props:
+		- minimumValue (inteiro) - valor mínimo do Range do seletor;
+		- maximumValue (inteiro) - valor máximo do Range do seletor;
+		- onValueChange (callback - parametro: valorSelecionado) - muda ao seletor ser arrastado;
+ 		- value (estado) - define ao componente qual o valor está o seletor;
+		- minimumTrackTintColor (Cor Hexadecimal) - colore por onde já passou o seletor;
+		- maximumTrackTintColor (Cor Hexadecimal) - colore por onde vai passar o seletor;
+		- thumbTintColot (Cor Hexadecimal) - colore o próprio seletor;
+/*Switch*/
+	// Um seletor em forma de interruptor que serve para por e retirar componentes da página (isTrue)
+	// Sintaxe:
+		<Switch <Props> />
+	// Props:
+		- value (booleano - estado) - valor inicial do seletor;
+		- onValueChange (função para mudar estado);
+		- thumColor (cor hexadecimal) - troca a cor do seletor
